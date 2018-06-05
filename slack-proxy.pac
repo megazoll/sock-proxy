@@ -5,6 +5,11 @@ function FindProxyForURL(url, host) {
         // ssh -D 8000 [user]@[server]
         return "SOCKS 176.115.73.8:2013; DIRECT";
     }
+    if (shExpMatch(host, "2ip.ru")) {        
+        // Use SOCK proxy, or fall back to a DIRECT traffic.
+        // ssh -D 8000 [user]@[server]
+        return "SOCKS 176.115.73.8:2013; DIRECT";
+    }
 
     return "DIRECT";
 }
